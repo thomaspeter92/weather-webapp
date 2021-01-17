@@ -1,0 +1,25 @@
+
+
+.SearchInput {
+    width: 75%;
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.SearchButton {
+    display: inline-block;
+    color: white;
+    margin: 10px;
+
+    &:hover {
+        color: lightslategray;
+    }
+}
