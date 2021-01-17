@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+SIMPLE WEB APP BUILT USING REACT.JS WITH OPEN WEATHER MAP API (https://openweathermap.org/api)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
