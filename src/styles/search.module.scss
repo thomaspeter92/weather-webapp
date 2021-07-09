@@ -1,0 +1,19 @@
+.search {
+    width: 75%;
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: all .5s ease;
+
+
+    &:focus {
+        outline: none;
+        width: 85%;
+    }
+}
+
+.search_icon {
+    margin-left: -2rem;
+}
