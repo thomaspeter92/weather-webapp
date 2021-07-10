@@ -13,21 +13,39 @@ function CardBig({city}) {
     const temp = city.list[0].main.temp
     const tempLow = city.list[0].main.temp_min
     const tempHigh = city.list[0].main.temp_max
+    const icon = city.list[0].weather[0].icon
+    const humidity = city.list[0].main.humidity
+    const pressure = city.list[0].main.pressure
+    const wind = city.list[0].wind.speed
+    const description = city.list[0].weather[0].description
+
+
 
     return (
         <div className={styles.cardBig}>
             <h2>{cityInfo?.name}, {cityInfo?.country}</h2>
             <h4>{day}</h4>
 
-            <img src={Cloudy} className={styles.img}/>
+            <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} className={styles.img}/>
 
             <h3>{temp}°</h3>
-            <div style={{display: 'flex', justifyContent: 'space-around', }}>
-                <h4>low: {tempLow}</h4>
-                <h4>high: {tempHigh}</h4>
+            <h5>{description}</h5>
+
+            <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                <div>
+                    <p>Humidity:</p>
+                    <h4>{humidity}%</h4>
+                </div>
+                <div>
+                    <p>Pressure:</p>
+                    <h4>{pressure} hPa</h4>
+                </div>
+                <div>
+                    <p>Wind:</p>
+                    <h4>{wind} m/sec</h4>
+                </div>
             </div>
             
-            <h5>Scattered Clouds</h5>
 
         </div>
     )

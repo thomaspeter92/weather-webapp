@@ -4,14 +4,16 @@ import CardSmall from './card-small'
 import CardBig from './card-big'
 import Search from './search'
 import Cloudy from "../assets/images/cloudy.png"
+import Modal from "../components/modal"
 
 function Weather() {
 
     const [currentCity, setCurrentCity] = useState("")
+    const [searchError, setError] = useState(false)
 
+    console.log(searchError)
 
     const getWeatherFromCity = (city) => {
-        console.log(city)
         const APP_ID = "42f31002a9e81edcd1aa8cd52b456cc9";
         fetch(`http://api.openweathermap.org/data/2.5/forecast/?units=metric&q=${city}&APPID=${APP_ID}`)
         .then((res) => res.json())
@@ -29,11 +31,17 @@ function Weather() {
                     });
                     // console.log(city)
                     setCurrentCity(city)
+                    setError(false)
+
+                } else {
+                    setError(true)
                 }
+
             },
             (error) => {
                 console.log(error)
-                
+                setError(true)
+                console.log(searchError)
             }
         )
     }
@@ -64,7 +72,11 @@ function Weather() {
                             )
                         }
                     }): null}
+
                 </div>
+                {searchError === true ? 
+                <Modal close={() => setError(false)}/>
+                : null}
             </div>
         </div>
     )
